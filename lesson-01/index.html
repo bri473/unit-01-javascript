@@ -7,23 +7,23 @@
 </head>
 <body>
     <script>
-      let score = 10;             
-score += 5;                   //15 
-score *= 2;                   // 10 
-let bonus = score % 7;        // 30
-score -= bonus;              //  20
- let old= ++score;            //28
-let next = ++score;           //29
-score /= 3;                  // 3.2 
-bonus--;                     // 10
-score = score + bonus * 4;   // 
+   let score = 10;              
+score += 5;                   //15     
+score *= 2;                  // 30
+let bonus = score % 7;       // 2
+score -= bonus;              // 28 
+let old = ++score;           // 29
+let next = ++score;          // 30
+score /= 3;                  // 10
+bonus--;                     // 1
+score = score + bonus * 4;   // 14
 
 // 1. Why is old 28 but score 29 after line 6?
-// A: because 
+// A: line 6 uses a increment 
 // 2. Why doesn’t line 10 give 44?
-// A:
+// A: because of oder of operations 
 // 3. What would score be if line 3 came before line 2?
-// A:
+// A: the score would be 19.67
     </script>
     
 </body>
