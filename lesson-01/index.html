@@ -7,23 +7,21 @@
 </head>
 <body>
     <script>
-   let score = 10;              
-score += 5;                   //15     
-score *= 2;                  // 30
-let bonus = score % 7;       // 2
-score -= bonus;              // 28 
-let old = ++score;           // 29
-let next = ++score;          // 30
-score /= 3;                  // 10
-bonus--;                     // 1
-score = score + bonus * 4;   // 14
+// Name Formatter
+let raw = "  jOHN smith ";
 
-// 1. Why is old 28 but score 29 after line 6?
-// A: line 6 uses a increment 
-// 2. Why doesn’t line 10 give 44?
-// A: because of oder of operations 
-// 3. What would score be if line 3 came before line 2?
-// A: the score would be 19.67
+let clean = raw.trim().toLowerCase; // 1. remove the extra spaces, make it all lowercase
+console.log(clean)
+let space = clean.length();               // 2. find the space between the names
+console.log(space)
+let first = space.slice(0,4);   // 3. cut out the first name
+console.log(first)
+let last  = first.slice(4) ;   // 4. cut out the last name
+console.log(last)
+first = last.toUpperCase();       // 5. capitalize each one
+console.log(first)
+last  = first.include ();
+console.log();  // 6. print "Last, First"
     </script>
     
 </body>
