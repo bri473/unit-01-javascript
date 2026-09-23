@@ -10,18 +10,18 @@
 // Name Formatter
 let raw = "  jOHN smith ";
 
-let clean = raw.trim().toLowerCase; // 1. remove the extra spaces, make it all lowercase
+let clean = raw.trim().toLowerCase(); // 1. remove the extra spaces, make it all lowercase
 console.log(clean)
-let space = clean.length();               // 2. find the space between the names
+let space = clean.indexOf(" "); // 2. find the space between the names
 console.log(space)
 let first = space.slice(0,4);   // 3. cut out the first name
 console.log(first)
 let last  = first.slice(4) ;   // 4. cut out the last name
 console.log(last)
-first = last.toUpperCase();       // 5. capitalize each one
+first = first.replace("j", "J");       // 5. capitalize each one
 console.log(first)
-last  = first.include ();
-console.log();  // 6. print "Last, First"
+last  = last.replace("s","S");
+console.log(last);  // 6. print "Last, First"
     </script>
     
 </body>
