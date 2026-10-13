@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // ---------- Puzzle 1: Same name, different variable ----------
+// PREDICTION:3
+// ACTUAL:3,2 
+// WHY: because live 3 is a gobal fiunction and the 2 would be from the lives -1 because it doesn't have a let varable. 
+console.log("--- Puzzle 1 ---");
+let lives = 3;
+function loseLife(lives) {
+    lives = lives - 1;
+    return lives;
+}
+let left = loseLife(lives);
+console.log(lives, left);
+
+
+// ---------- Puzzle 2: The unchanged score ----------
+// PREDICTION: 100
+// ACTUAL:100,50
+// WHY:the score multply with the local function in the bracket but the code in the bracket also over shadow by the gobal varable 
+console.log("--- Puzzle 2 ---");
+let score = 50;
+function doubleIt(num) {
+    num = num * 2;
+    console.log(num);
+}
+doubleIt(score);
+console.log(score);
+
+
+// ---------- Puzzle 3: The quiet shout ----------
+// PREDICTION:dog 
+// ACTUAL:dog
+// WHY:because the gobal function has a let varable and the code in the bracket shadow by the gobal function 
+console.log("--- Puzzle 3 ---");
+function shout(word) {
+    word = word.toUpperCase();
+}
+let pet = "dog";
+shout(pet);
+console.log(pet);
+
+        </script> 
