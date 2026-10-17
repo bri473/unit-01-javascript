@@ -18,24 +18,24 @@ let seating = [
 // 1b. Print each row on one line, like: Row 1: Mia Leo Zoe Sam
 for (let r = 0; r <= 1 ; r++) {
     let rowNames = "";
-    for (let c = 0; c <= 2; c++) {
-        rowNames += r + " ";
+    for (let c = 0; c <steating[r].length; c++) {
+        rowNames += steating [r] [c]+ " ";
     }
-    console.log("Row " + Colum + ": " + rowNames);
+    console.log("Row " + (r+1) + ": " + rowNames);
 }
 
 // 1c. Log the name in row 2, seat 3
-console.log("Row 2, seat 3:","John");
+console.log("Row 2, seat 3:","seating[2][3]");
 
 // 1c. Move a new student into row 0, seat 1, then print the chart again
-____ = "NewStudent";
+seating[0] [1]= "NewStudent";
 // Copy your loop from 1b here
- for (let r = 0; r <= 1 ; r++) {
+ for (let r = 0; r <steating.length ; r++) {
     let rowNames = "";
-    for (let c = 0; c <= 1; c++) {
-        rowNames += r + " ";
+    for (let c = 0; c <seating[r].length; c++) {
+        rowNames += steating[r] [c]+ " ";
     }
-    console.log("Row " + Colum + ": " + rowNames);
+    console.log("Row " + (r+1) + ": " + rowNames);
 }
 // ===== Core 2: Test-Score Stats =====
 let testScores = [72, 95, 100, 64, 81, 9, 88];
@@ -43,21 +43,22 @@ let testScores = [72, 95, 100, 64, 81, 9, 88];
 // 2a. Default sort, then explain the result in a comment
 console.log("Default sort:", testScores.sort());
 // Why is it out of order?
+// because Javascript sort arrays in order by defult,converting number to strings.
 
 // 2b. Sort low to high correctly
 testScores.sort((a,b)=> a-b);
 console.log("Low to high:", testScores);
 
 // 2c. Lowest and highest (use indexes, not typed numbers)
-console.log("Lowest:", );
-console.log("Highest:", ____);
+console.log("Lowest:", testScores[0]);
+console.log("Highest:", testScores[testScores.length-1]);
 
 // 2d. Add up the scores with a for loop, then average
 let total = 0;
-for (let i = 0; i < ____; i++) {
-    total ____ testScores[i];
+for (let i = 0; i < testScores.length; i++) {
+    total+= testScores[i];
 }
-let average = ____ / testScores.length;
+let average = total/ testScores.length;
 console.log("Average:", average.toFixed(1));
 
 // ===== Core 3: Student Search =====
@@ -67,9 +68,9 @@ let roster = ["Jordan", "Priya", "Marcus", "Lena", "Priya"];
 let searchName = prompt("Enter a student's name:");
 
 // 3b and 3c. Found or not? If found, also show the LAST position
-if (roster.____(searchName) !== ____) {
-    console.log("Found at position " + roster.____(searchName));
-    console.log("Last position: " + roster.____(searchName));
+if (roster.indexOf(searchName) !== -1) {
+    console.log("Found at position " + roster.indexOf(searchName));
+    console.log("Last position: " + roster.indexOf(searchName));
 } else {
     console.log("Not on the roster");
 }
