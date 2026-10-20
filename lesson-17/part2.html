@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+<script>
+// ----- CORE -----
+
+// Core 1: Write a constructor function named Student with three parameters:
+//   name, grade, and scores (an array of three test scores).
+//   Store each one as a property using this.
+ 
+function Student (name, grade, scores) {
+    this.name= name 
+    this.grade=grade 
+    this.scores=scores 
+
+    this.getHighest=function() {
+        this.getHighest= getHighest.sort( (b,a)=>b-a ) 
+     }
+}
+  
+
+
+// Core 2: Inside your constructor, add a method named getHighest that RETURNS
+//   the highest of this.scores[0], this.scores[1], and this.scores[2].
+//   Hint: which Math method from Day 10 finds the largest number?
+
+
+
+
+// Core 3: Create an array named roster that holds THREE students made with new.
+ let roster  =[
+    new student("tia",11[78,95,99])
+     new student ("melisha",19 [88,95,65])
+     new student("oshecka",12[56,75,89])
+
+ ];
+
+// Core 4: Log each student's name and highest score using its index,
+//   for example roster[0].name. Output should look like: Maya: 90
+
+
+// Core 5: For roster[0]: change the second score (scores[1]) to a new high score.
+//   Add a new homeroom property using BRACKET notation.
+//   Log the new homeroom and the new highest score.
+
+
+// ----- STRETCH -----
+
+// Stretch 6: Inside your constructor, add a method named describe that RETURNS
+//   a sentence like "Maya is in grade 12".
+//   Here: call it on roster[0], roster[1], and roster[2].
+
+
+// Stretch 7: Write a function printProperty(student, propName) that logs
+//   the value of any property passed in as a string.
+//   Test it with printProperty(roster[1], "name") and printProperty(roster[2], "grade").
+//   Hint: which notation do you need?
+
+
+// Stretch 8: Inside your constructor, add a method named updateScore(index, newScore)
+//   that replaces one score in this.scores.
+//   Here: print roster[2]'s highest score, call roster[2].updateScore(2, 90),
+//   then print the highest score again.
+
+
+// ----- CHALLENGE -----
+
+// Challenge 9: Inside your constructor, add a method named getLetter that uses
+//   this.getHighest() and an if...else if chain (or switch)
+//   to return "A", "B", "C", "D", or "F" for the student's best score.
+//   Print a report line for roster[0] and roster[1] like: Maya (Grade 12): 90 - A
+
+
+// Challenge 10: Write a function compare(studentA, studentB) that RETURNS the NAME
+//   of the student with the higher top score.
+//   Test it with compare(roster[0], roster[2]).
+</script>
