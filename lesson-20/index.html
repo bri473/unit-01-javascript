@@ -51,19 +51,33 @@ catch (err){
 }
 
 try{
-roster.push(new student( "Ben"[75, 82, 80]))}
+roster.push(new student( "Ben"[75, 82, 80]));
+}
 catch (err){
     console.log(err.message)
 }
 try{
-roster.push(new student("Finn" [88, "ninety", 91]))}
-catch(err){console.log(err.message)
-
+roster.push(new student("Finn" [88, "ninety", 91]));
 }
-new student( "Chloe"  [68, 71, 59])
-new students( "Diego"  [85, 90, 78])
-new students(  "Gia"    [94, -5, 87] )
-new students( "Emma"   [55, 62, 48])
+catch(err){console.log(err.message)}
+
+try{
+roster.push(new student( "Chloe"  [68, 71, 59]));
+}
+        catch(err){console.log(err.message) }
+
+try{
+roster.push(new student( "Diego"  [85, 90, 78]))}
+catch(err){console.log(err.message)}
+  
+try{
+roster.push(new student(  "Gia" [94, -5, 87]))}
+catch(err){console.log(err.message)}
+  
+    try{
+roster.push(new student( "Emma" [55, 62, 48]))}
+catch(err){console.log(err.message)
+}
 
 
    
@@ -74,7 +88,21 @@ new students( "Emma"   [55, 62, 48])
 // Write getLetter(average) that returns "A" (90+), "B" (80+),
 // "C" (70+), "D" (60+), or "F".
 // Use an if...else if chain OR a switch. Check the highest grade first!
-
+function getLetter(avaerage){
+if ( score >=100 ){
+  alert("A")
+} else if (score >=90 ){
+  alert("A")
+} else if (score >= 80) {
+  alert ("B")
+ }else if (score >= 70){
+  alert("C")
+} else if (score >= 60  ){
+  alert("D")
+} else if (score <= 60){
+    alert("F")
+}
+}
 
 // STEP 4: Highest and lowest
 // Write findHighest(list) and findLowest(list).
