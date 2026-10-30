@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Gradebook</title>
+</head>
+<body>
+  <h1>Period 3 Gradebook</h1>
+  <ul id="gradebook"></ul>
+  <h2>Honor Roll</h2>
+  <ul id="honor"></ul>
+
+  <script>
+    let students = [
+      { name: "Maya", average: 94.5 },
+      { name: "Leo", average: 81.4 },
+      { name: "Priya", average: 67.8 },
+      { name: "Sam", average: 88 },
+      { name: "Jordan", average: 72.3 }
+    ];
+
+    // Write your code here, one comment above each task
+
+    let list = document.getElementById("gradebook");
+
+    for (let i= 0;i < students.length;i++){
+        let li =document.createElement("li");
+        li.textContent = students[i].name + " " + students[i].average.toFixed(1);
+     list.appendChild(li);
+    }
+   let highestStudent = students[0];
+for (let i = 1; i < students.length; i++) {
+  if (students[i].average > highestStudent.average) {
+    highestStudent = students[i];
+  }
+}
+          let reportP =document. createElement("p");
+         reportP.textContent = "Report for" + [students.length] + " student "
+         document.body.appendChild(reportP);
+    
+         let lettergrade= "" ; 
+         if (students.average >=90 ){
+            grade = "A";
+         } else if (students.average >= 80){
+            grade = "B";
+         } else if (students.average >= 70){
+            grade = "C";
+         } else if (students.average >= 60){
+            grade = "D";
+         } else {
+            grade = "F";
+         }
+    
+         
+
+
+    
+  </script>
+</body>
+</html>
