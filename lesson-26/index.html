@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Arcade Controls</title>
+  <style>
+    .card { border: 2px solid purple; padding: 8px; width: 200px; margin: 6px 0; }
+    .glow { background-color: gold; }
+    #player { position: relative; width: 40px; height: 40px; background-color: purple; }
+  </style>
+</head>
+<body>
+  <h1>Arcade Controls</h1>
+  <p id="score">Score: 0</p>
+  <button id="point">+1 Point</button>
+  <button id="reset">Reset</button>
+  <button id="help" onclick="showHelp()">Help</button>
+  <p id="status">Press Help for instructions</p>
+  <div id="prize" class="card">Hover for the prize</div>
+  <div class="card game">Pinball</div>
+  <div class="card game">Air Hockey</div>
+  <div class="card game">Skee-Ball</div>
+  <h2>High Scores</h2>
+  <ul id="highScores"></ul>
+  <div id="player"></div>
+ 
+  <script>
+    let score = 0;
+    let x = 0;
+    let scoreText = document.getElementById("score");
+    let player = document.getElementById("player");
+    let topScores = ["Ana: 42", "Kai: 37", "Zoe: 30"];
+    let point = document.getElementById("point")
+      let resetBtn = document.getElementById("reset")
+    // Your code goes here
+    //1 
+     function addPoint(){
+        score += 1;
+        scoreText.textContent= "Score: " + score;
+     }
+     point.addEventListener("click", addPoint)
+     //2
+     function resetScore(){
+         score = 0;
+          scoreText.textContent= "Score: 0";
+        }
+          resetBtn.onclick= resetScore;
+
+          //3
+          function showHelp(event){
+              document.getElementById("status").innerHTML = "Use the <b>arrow keys</b> to move";
+             }
+
+          //4
+           prize.addEventListener("mouseover", prize)
+           prize.textContent = "prize:500 ticket "
+           prize.className = "card glow"
+           
+           prize.addEventListener("mouseout",prize)
+           prize.textContent="Hover for the prize"
+           prize.className = "card"
+  </script>
+</body>
+</html>
