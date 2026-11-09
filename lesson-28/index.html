@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Pizza Order</title>
+</head>
+<body>
+  <h1>Pizza Order</h1>
+  <form name="order">
+    <p>Name: <input type="text" id="custName"> <span id="nameError"></span></p>
+    <p>Quantity: <input type="text" id="qty"> <span id="qtyError"></span></p>
+    <p>Promo code: <input type="text" id="promo"> <span id="promoError"></span></p>
+    <p>Phone: <input type="text" id="phone"> <span id="phoneError"></span></p>
+    <button type="button" id="orderBtn">Place order</button>
+  </form>
+  <p id="orderStatus"></p>
+  <script>
+    let custName = document.getElementById("custName");
+    let qty = document.getElementById("qty");
+    let promo = document.getElementById("promo");
+    let phone = document.getElementById("phone");
+
+    // Write your code below
+//Write showError(id, message): it sets the text of the element with that id to message and its color to red.
+      function showError(id,message){
+      let element = document.getElementById(id);
+  if (element) {
+    element.textContent = message;
+    element.style.color = 'red';
+  }
+}
+//Write checkName(): if the nn #nameError and return false. Otherwise clear the message ("") and rame is blank or only spaces, show Enter your name. ieturn true.
+   function checkName() {
+    let nameError = document.getElementById("name").value;
+    let errorElement = document.getElementById("nameError");
+
+    
+    if (nameError.trim() === "") {
+        nameError.textContent = "Enter your name.";
+        return false;
+    } else {
+        errorElement.textContent = "";
+        return true;
+    }
+}
+//Write checkQty(), testing in this order: blank → Enter a quantity.; not a number → Quantity must be a number.; less than 1 or more than 10 → Order 1 to 10 pizzas. Show the message in #qtyError (or clear it) and return true or false.
+  function checkQty(){
+   if (qtyValue === "") {
+        qtyError.textContent = "Enter a quantity.";
+        return false;
+
+   }
+}
+
+
+
+  //Write checkPromo(): the promo code may be blank, or PIZZA5 typed in any case with any spaces around it. Anything else shows Code not found. in #promoError. Return true or false.
+
+    function checkPromo() {
+  let promoInput = document.getElementById('promoInput').value; 
+  let errorElement = document.getElementById('promoError');
+  
+  
+  let cleanedCode = promoInput.trim().toUpperCase();
+
+
+  if (cleanedCode === "" || cleanedCode === "PIZZA5") {
+    errorElement.textContent = ""; 
+    return true;
+
+  } else {
+    errorElement.textContent = "Code not found.";
+    return false;
+  }
+}
+
+  
+  </script>
+</body>
+</html>
