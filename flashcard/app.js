@@ -12,9 +12,15 @@ function checkScreen() {
     screenMsg.textContent = "Window width: " + window.innerWidth + "px";
   }
 }
-
+ //checkpiont#3 
 function startApp() {
   checkScreen();
+  document.getElementById("nextBtn").addEventListener("click",nextCard);
+  document.getElementById("card").addEventListener("mouseover",highlightCard);
+  document.getElementById("card").addEventListener("mouseout",highlightCard);
+  document.addEventListener("keydown",checkKey);
+
+  showCard(current);
 }
 
 
@@ -61,3 +67,39 @@ let deck = [
  console.log(deck.length)
  console.log(deck[0].getLabel())
  console.log(getDomain("4.2"))
+
+
+ //checkpoint #3
+ let current = 0
+
+ function showCard(index){
+  if (document.getElementById("cardAnswer").style.display== "none"){
+    document.getElementById("cardAnswer").style.display = "block";
+  }else {
+    document.getElementById("cardAnswer").style.display ="none";
+  }
+ }
+
+ function nextCard(){
+  current++
+  if(current % deck.length == 0){
+    current =0
+  }
+  showCard(current);
+ }
+
+ function highlightCard(){
+  let card = document.getElementById("card");
+  card.className = "card highlight";
+ }
+ 
+function unhighlightCard(){
+  let card = document.getElementById("card")
+  card.className = "card"
+}
+
+function checkKey(event){
+  if (event.key === "ArrowRight"){
+    nextCard();
+  }
+}
